@@ -6,7 +6,7 @@ public class BallVelocityController : MonoBehaviour
 {
     float maxVelocity = 5f;
     Rigidbody rigidBody;
-    void Start()
+   void Start()
 
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -16,6 +16,7 @@ public class BallVelocityController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(rigidBody.velocity);
        if (rigidBody.velocity.magnitude > maxVelocity)
             rigidBody.velocity = rigidBody.velocity.normalized * maxVelocity;
        if (rigidBody.velocity.y < 0 && rigidBody.velocity.magnitude< maxVelocity)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    float force = 80f;
+    private float force = 150f;
     Rigidbody rigidBody;
     void Start()
     {
