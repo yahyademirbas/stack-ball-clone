@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    private float force = 150f;
+    public float force = 20f;
     public bool flag = false;
     Rigidbody rigidBody;
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
     }
-    void FixedUpdate()
+    void Update()
     {
 
         if (Input.GetKey(KeyCode.Space))
         {
-            DestroyPentagons.instance.Flag();
+            DestroyPentagons.instance.Space();
             rigidBody.AddForce(0, -force, 0);
             
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            DestroyPentagons.instance.DeSpace();
         }
     }
 }

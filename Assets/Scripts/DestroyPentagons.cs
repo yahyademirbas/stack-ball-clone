@@ -5,11 +5,11 @@ using UnityEngine;
 public class DestroyPentagons : MonoBehaviour
 {
     public static DestroyPentagons instance;
-    bool flag = false;
+    bool space = false;
     BoxCollider boxCollider;
     MeshCollider meshCollider;
     bool isTrigger = false;
-    bool mcTrigger = false;
+    //bool mcTrigger = false;
     private void Awake()
     {
         instance = this;
@@ -19,35 +19,44 @@ public class DestroyPentagons : MonoBehaviour
     { 
 
     }
-    public void Flag()
+    public void Space()
     {
-        flag = true;
+        space = true;
     }
-
+    public void DeSpace()
+    {
+        space = false;
+    }
 
     public void isTriggered()
     {
-
         isTrigger = true;
     }
+    public void deTriggered()
+    {
+        isTrigger = false;
+    }
+
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "ball")
-        mcTrigger = true;
+        if (col.gameObject.name == "Ball") {
+            if (space == true && isTrigger == false) //&& mcTrigger == true)
+            {
+                Destroy(gameObject);
+                space = false;
+                isTrigger = false;
+            }
+
+        }
     }
 
 
     void Update()
-    {
+    {/*
         Debug.Log("is " + isTrigger);
         Debug.Log("mc " + mcTrigger);
-        Debug.Log("flag " + flag);
-        if (flag == true && isTrigger == false && mcTrigger == true) 
-        {
-            Destroy(gameObject);
-            flag = false;
-            isTrigger = false;
-        }
+        Debug.Log("space " + space);*/
+      
     }}
 
 
