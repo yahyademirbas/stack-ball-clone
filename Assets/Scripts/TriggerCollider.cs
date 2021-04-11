@@ -10,10 +10,10 @@ public class TriggerCollider : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider col)
+    /*private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "Ball")
-            DestroyPentagons.instance.isTriggered(); }
+            DestroyPentagons.instance.isTriggered(); }*/
 
     private void OnTriggerExit(Collider col) 
     { 

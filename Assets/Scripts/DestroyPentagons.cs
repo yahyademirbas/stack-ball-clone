@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class DestroyPentagons : MonoBehaviour
 {
+    
     public static DestroyPentagons instance;
-    bool space = false;
-    BoxCollider boxCollider;
-    MeshCollider meshCollider;
-    bool isTrigger = false;
+    bool space;
+    int i= 1;
+    bool isTrigger;
+    GameObject toBeDestructed;
     //bool mcTrigger = false;
-    private void Awake()
+    public void Awake()
     {
         instance = this;
-    }
-
-    void Start()
-    { 
-
+        toBeDestructed = GameObject.Find("Pentagon1 (" + i + ")");
     }
     public void Space()
     {
+        //bug.Log("bastı");
         space = true;
     }
     public void DeSpace()
     {
+       //Debug.Log("kalktı");
         space = false;
     }
 
@@ -36,28 +35,26 @@ public class DestroyPentagons : MonoBehaviour
     {
         isTrigger = false;
     }
+    public void Incrementi() {
+        i++;
+    }
 
-    private void OnCollisionEnter(Collision col)
+        
+
+    void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Ball") {
-            if (space == true && isTrigger == false) //&& mcTrigger == true)
-            {
-                Destroy(gameObject);
-                space = false;
-                isTrigger = false;
-            }
+        if (col.gameObject.name == "Ball" && space == true && isTrigger == false) {
+            
+            
+            Incrementi();
+            Destroy(toBeDestructed);
+
+            
 
         }
     }
 
-
-    void Update()
-    {/*
-        Debug.Log("is " + isTrigger);
-        Debug.Log("mc " + mcTrigger);
-        Debug.Log("space " + space);*/
-      
-    }}
+}
 
 
 

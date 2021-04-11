@@ -13,16 +13,10 @@ public class BallController : MonoBehaviour
     }
     void Update()
     {
-
         if (Input.GetKey(KeyCode.Space))
         {
-            DestroyPentagons.instance.Space();
             rigidBody.AddForce(0, -force, 0);
             
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            DestroyPentagons.instance.DeSpace();
         }
     }
 }
