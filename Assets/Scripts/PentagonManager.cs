@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PentagonManager : MonoBehaviour
 {
-
+    public static PentagonManager instance;
     public GameObject[] pentagonModel;
     [HideInInspector]
     public GameObject[] pentagonPrefab = new GameObject[4];
@@ -14,6 +14,10 @@ public class PentagonManager : MonoBehaviour
     int pentagonNumber;
     int pentagonQuantity = 29;
     // Start is called before the first frame update
+    public void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
 

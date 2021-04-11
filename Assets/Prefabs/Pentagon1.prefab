@@ -921,6 +921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2792648403567012512}
   - component: {fileID: 2792648403567012513}
+  - component: {fileID: 66441289}
   m_Layer: 0
   m_Name: TriggerColliderOne
   m_TagString: Untagged
@@ -955,6 +956,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6402414, y: 1.8943729, z: 1.5152342}
   m_Center: {x: 0.14540875, y: 0.44718647, z: 1.5798111}
+--- !u!114 &66441289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2792648403567012519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac9bce6b5c567d49a2361cd20d91eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2792648403568488234
 GameObject:
   m_ObjectHideFlags: 0
