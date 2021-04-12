@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PentagonDestroyer : MonoBehaviour
 {
-    
+    public GameObject Ball;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Ball = GameObject.Find("Ball");
     }
     bool col = false;
     bool trig = false;
@@ -23,15 +23,17 @@ public class PentagonDestroyer : MonoBehaviour
         Debug.Log("trigger in child detected");
         trig = true;
     }
-    
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && trig && col)
-            Destroy(gameObject);
+        if (Input.GetKey(KeyCode.Space) && trig && col) {
+            Ball.GetComponent<Rigidbody>().AddForce(0, -1881f, 0);
+        Destroy(gameObject);
         trig = false;
-        col = false;
+        col = false; 
+    }
     }
 
 }
