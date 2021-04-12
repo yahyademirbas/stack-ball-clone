@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0, y: 0, z: 0}
-  m_Center: {x: -0.46527076, y: -1.003581, z: 0.0073872022}
+  m_Size: {x: 5.777969, y: 1.1462736, z: 5.5340576}
+  m_Center: {x: 0.17902853, y: 0.111474514, z: -0.27285194}
 --- !u!114 &4016433455361414761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 8626617906314162644}
   - component: {fileID: 1872255935443372112}
   - component: {fileID: 4646953813405969813}
+  - component: {fileID: 1123873143}
   m_Layer: 0
   m_Name: PentagonZeroBlack
   m_TagString: Untagged
@@ -1088,6 +1089,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1123873143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177829818296875703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f935b6ed537cd234ba8000610978bdb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5507505702713890569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6734564026773512738}
   - component: {fileID: 1798845662}
+  - component: {fileID: 6980174739907999625}
   m_Layer: 0
   m_Name: Pentagon0
   m_TagString: pentagon
@@ -1131,5 +1145,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40d39ba45627e754a8da9474ce3f1f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6980174739907999625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507505702713890569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c030791d52fd045ba513ea5cf7d070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

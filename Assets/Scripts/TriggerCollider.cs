@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class TriggerCollider : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
 
     }
 
-    /*private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider other)
     {
-        if (col.gameObject.name == "Ball")
-            DestroyPentagons.instance.isTriggered(); }*/
+        transform.parent.GetComponent<PentagonDestroyer>().TriggerDetectedInChild(this);
+    }
 
-    /*private void OnTriggerExit(Collider col) 
-    { 
-        DestroyPentagons.instance.deTriggered();
-    }*/
-    // Update is called once per frame
+
     void Update()
     {
         

@@ -18,6 +18,7 @@ public class PentagonManager : MonoBehaviour
     {
         instance = this;
     }
+    public GameObject Pentagons;
     void Start()
     {
 
@@ -25,6 +26,7 @@ public class PentagonManager : MonoBehaviour
         {
 
             temp1Pentagon = Instantiate(pentagonModel[Random.Range(0,3)]);
+            temp1Pentagon.transform.SetParent(Pentagons.transform);
             temp1Pentagon.transform.position = new Vector3(0, pentagonQuantity-21, 0);
             temp1Pentagon.transform.eulerAngles = new Vector3(0, pentagonQuantity*8, 0);
 

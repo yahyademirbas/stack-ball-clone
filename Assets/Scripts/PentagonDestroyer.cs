@@ -4,33 +4,35 @@ using UnityEngine;
 
 public class PentagonDestroyer : MonoBehaviour
 {
+    
     // Start is called before the first frame update
-    public List<GameObject> pentagonList = new List<GameObject>();
-   
     void Start()
     {
- 
-         foreach(GameObject fooObj in GameObject.FindGameObjectsWithTag("pentagon")) {
+        
+    }
+    bool col = false;
+    bool trig = false;
+    public void CollisionDetectedInChild(PentagonChild pentagonChild)
+    {
+        Debug.Log("collision in child detected");
+        col = true;
 
-            pentagonList.Add(fooObj);
-         }
-}
-
+    }
+    public void TriggerDetectedInChild(TriggerCollider triggerCollider)
+    {
+        Debug.Log("trigger in child detected");
+        trig = true;
+    }
+    
 
     // Update is called once per frame
-
-    private void OnDestroy()
-    {
-        pentagonList.Remove(gameObject);
-    }
     void Update()
     {
-        /* for (int i = 0; i < length; i++)
-         {
-             Destroy(PentagonManager.instance.pentagonModel[i]);
-         }*/
-        
-
-        
+        if (Input.GetKey(KeyCode.Space) && trig && col)
+            Destroy(gameObject);
+        trig = false;
+        col = false;
     }
+
 }
+
