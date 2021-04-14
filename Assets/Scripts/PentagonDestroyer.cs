@@ -18,38 +18,35 @@ public class PentagonDestroyer : MonoBehaviour
     }
     bool col = false;
     bool trig = false;
-    public void CollisionDetectedInChild(PentagonChild pentagonChild)
-    {
-        Debug.Log("collision in child detected");
-        col = true;
 
-    }
     public void TriggerDetectedInChild(TriggerCollider triggerCollider)
     {
-        Debug.Log("trigger in child detected");
+        //Debug.Log("trigger in child detected");
         trig = true;
     }
-
-
-    // Update is called once per frame
-    void Update()
+    public void CollisionDetectedInChild(PentagonChild pentagonChild)
     {
         if (Input.GetKey(KeyCode.Space) && trig == false)
         {
-            Debug.Log("Game Over");
+           // Debug.Log("Game Over");
             SceneManager.LoadScene(sceneBuildIndex: 1);
         }
-        if (Input.GetKey(KeyCode.Space) && trig && col)
+        if (Input.GetKey(KeyCode.Space) && trig)
         {
             CamPos.instance.Takip();
             Ball.GetComponent<Rigidbody>().AddForce(0, -1881f, 0);
+            Score.instance.GainScore();
             Destroy(gameObject);
             trig = false;
             col = false;
-            
+
 
         }
-       
+
     }
 
 }
+  
+
+
+    // Update is called once per frame

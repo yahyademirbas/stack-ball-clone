@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(scoreHolder);
+        Debug.Log(scoreHolder);
         scoreText.text = scoreHolder.ToString();
     }
 }
