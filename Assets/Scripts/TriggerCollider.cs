@@ -10,7 +10,7 @@ public class TriggerCollider : MonoBehaviour
 
     }
 
-    private void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
         transform.parent.GetComponent<PentagonDestroyer>().TriggerDetectedInChild(this);
     }
