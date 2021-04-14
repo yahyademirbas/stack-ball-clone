@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class PentagonManager : MonoBehaviour
 {
+
     public static PentagonManager instance;
     public GameObject[] pentagonModel;
     [HideInInspector]
     public GameObject[] pentagonPrefab = new GameObject[4];
 
-    private GameObject temp1Pentagon, temp2Pentagon;
+    private GameObject temp1Pentagon;
 
     int pentagonNumber;
-    int pentagonQuantity = 29;
+    public int pentagonQuantity = 29;
     // Start is called before the first frame update
     public void Awake()
     {
