@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PentagonDestroyer : MonoBehaviour
 {
@@ -33,6 +34,11 @@ public class PentagonDestroyer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Space) && trig == false)
+        {
+            Debug.Log("Game Over");
+            SceneManager.LoadScene(sceneBuildIndex: 1);
+        }
         if (Input.GetKey(KeyCode.Space) && trig && col)
         {
             CamPos.instance.Takip();
