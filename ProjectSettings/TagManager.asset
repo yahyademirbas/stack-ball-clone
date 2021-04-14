@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ball
   - pentagon
+  - backgroun
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - selam
   - 
   - 
   - 
@@ -40,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: objeler
+    uniqueID: 1363980137
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 2800595691
     locked: 0

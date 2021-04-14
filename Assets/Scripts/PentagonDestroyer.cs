@@ -5,24 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class PentagonDestroyer : MonoBehaviour
 {
+    
+    public float speed = 0.1f;
     public GameObject Ball;
-    public static PentagonDestroyer instance;
-   
-void Awake()
-    {
-        instance = this;
-    }
     // Start is called before the first frame update
-
     void Start()
     {
+        
+       
         Ball = GameObject.Find("Ball");
+      
     }
+    bool col = false;
     bool trig = false;
+    public void CollisionDetectedInChild(PentagonChild pentagonChild)
+    {
+        Debug.Log("collision in child detected");
+        col = true;
 
+    }
     public void TriggerDetectedInChild(TriggerCollider triggerCollider)
     {
-        //Debug.Log("trigger in child detected");
+        Debug.Log("trigger in child detected");
         trig = true;
     }
 
@@ -30,30 +34,22 @@ void Awake()
     // Update is called once per frame
     void Update()
     {
-       
-    }
-    public void CollisionDetectedInChild(PentagonChild pentagonChild)
-    {
         if (Input.GetKey(KeyCode.Space) && trig == false)
         {
             Debug.Log("Game Over");
             SceneManager.LoadScene(sceneBuildIndex: 1);
         }
-
-        if (Input.GetKey(KeyCode.Space) && trig)
+        if (Input.GetKey(KeyCode.Space) && trig && col)
         {
+            CamPos.instance.Takip();
             Ball.GetComponent<Rigidbody>().AddForce(0, -1881f, 0);
-            Score.instance.GainScore();
             Destroy(gameObject);
             trig = false;
+            col = false;
+            
 
         }
-        
+       
     }
 
-
-
-
-
 }
-
