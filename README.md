@@ -6,6 +6,6 @@ There are too many improvable parts in this version but... Does it worth for a c
 
 *insert YOU ARE DIE joke here*
 
-<a href="https://ibb.co/VjCfRHt"><img src="https://i.ibb.co/SsmFbQP/stackb.gif" alt="stackb" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/TrPDB91/gif.gif" alt="gif" border="0"></a>
 
 
